@@ -4,7 +4,9 @@
 ## Instructions
 
 Create scripts/ directory
+
 Extract scripts.zip there
+
 Run!
 
 
