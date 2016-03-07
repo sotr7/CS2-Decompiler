@@ -1,0 +1,9 @@
+/scripts/
+/sources/
+/.classpath
+/.project
+/db_missing.txt
+/instr_read_original.txt
+/instr_read.txt
+/instr_readx.txt
+/.settings/
