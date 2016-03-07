@@ -74,13 +74,13 @@ public class IfElseNode extends AbstractCodeNode {
 		printer.beginPrinting(this);
 		for (int i = 0; i < expressions.length; i++) {
 			boolean first = i == 0;
-			printer.print(first ? "if (" : " else if (");
+			printer.print(first ? "if (" : "\nelse if (");
 			expressions[i].print(printer);
 			printer.print(") ");
 			scopes[i].print(printer);
 		}
 		if (hasElseScope()) {
-			printer.print(" else ");
+			printer.print("\nelse ");
 			elseScope.print(printer);
 		}
 		printer.endPrinting(this);

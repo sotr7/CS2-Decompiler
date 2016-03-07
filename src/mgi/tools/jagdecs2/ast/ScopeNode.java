@@ -247,13 +247,19 @@ public class ScopeNode extends AbstractCodeNode {
 	private boolean needsBraces() {
 		if (!(getParent() instanceof LoopNode) && !(getParent() instanceof IfElseNode))
 			return true;
-		
+	
 		int cElements = size();
+		for (int i = 0; i < cElements; i++) {
+			if (read(i) instanceof LoopNode || read(i) instanceof IfElseNode || read(i) instanceof SwitchNode)
+				return true;
+		}
+		
+		
 		for (LocalVariable var : this.declaredLocalVariables)
 			if (var.needsScopeDeclaration())
 				cElements++;
 		
-		return cElements != 1;
+		return cElements > 1;
 	}
 	
 
